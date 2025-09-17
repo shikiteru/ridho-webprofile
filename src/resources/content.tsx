@@ -185,7 +185,7 @@ const about: About = {
           </>,
           <>
             Monitored uptime and logs; wrote runbooks, automated health checks,
-            and scheduled maintenance, helping achieve {">"}99.9% availability.
+            and scheduled maintenance.
           </>,
         ],
         images: [],
