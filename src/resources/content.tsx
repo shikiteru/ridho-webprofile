@@ -1,13 +1,22 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import {
+  About,
+  Blog,
+  Gallery,
+  Home,
+  Newsletter,
+  Person,
+  Social,
+  Work,
+} from "@/types";
 import { Line, Logo, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "Ridho",
+  lastName: "",
+  name: `Ridho`,
+  role: "Fullstack Developer",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
+  email: "syamridho58@gmail.com",
   location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
 };
@@ -98,9 +107,14 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        I am a FullStack Developer with over 3 years of experience in the
+        industry.I have experience building robust and scalable server-side
+        applications using both Node.js and Golang, and I have a solid
+        understanding of RESTful APIs (JSON) and effective database design. I am
+        highly committed to continuous learning and growth in the field of web
+        development, always striving to stay up to date with industry trends and
+        best practices to deliver efficient, maintainable, and high performance
+        applications.
       </>
     ),
   },
@@ -109,41 +123,69 @@ const about: About = {
     title: "Work Experience",
     experiences: [
       {
-        company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        company: "Freelance",
+        timeframe: "2021 - Present",
+        role: "Fullstack Developer",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Design and build conversion-oriented landing pages based on client
+            briefs, with responsive UI and on-page SEO best practices.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Collaborate with other developers to deliver server-side features
+            using Node.js/Express (auth, REST APIs, integrations).
+          </>,
+          <>
+            Publish and maintain APIs on RapidAPI (e.g., X (Twitter) Unofficial
+            API, BBC News Crawler API), including usage quotas, billing, and
+            versioning.
           </>,
         ],
         images: [
           // optional: leave the array empty if you don't want to display images
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
-            width: 16,
-            height: 9,
-          },
+          // {
+          //   src: "/images/projects/project-01/cover-01.jpg",
+          //   alt: "Once UI Project",
+          //   width: 16,
+          //   height: 9,
+          // },
         ],
       },
       {
-        company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        company: "PT Hadi Putra Manunggal ",
+        timeframe: "2024 - 2025",
+        role: "Fullstack Developer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Built and shipped internal web applications (workflow, reporting,
+            and ops tools) with Next.js / Node.js (Express/Nest), Prisma, and
+            PostgreSQL, implementing RBAC, JWT, and audit logging to meet
+            internal compliance.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Designed reliable web-scraping pipelines using Puppeteer/Playwright,
+            scheduling (node-cron),reducing manual data collection by ~70–90%.
+          </>,
+        ],
+        images: [],
+      },
+      {
+        company: "UKUR.com",
+        timeframe: "2023 - 2024",
+        role: "Fullstack Developer",
+        achievements: [
+          <>
+            Built internal web applications (workflow/reporting tools) with
+            Next.js/React and Node.js (Express/Nest); implemented RBAC, JWT, and
+            input validation.
+          </>,
+          <>
+            Designed and administered SQL/NoSQL data models (PostgreSQL/MySQL,
+            MongoDB), including indexing, migrations, and backups.
+          </>,
+          <>
+            Monitored uptime and logs; wrote runbooks, automated health checks,
+            and scheduled maintenance, helping achieve {">"}99.9% availability.
           </>,
         ],
         images: [],
@@ -155,12 +197,23 @@ const about: About = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Dibimbing.id",
+        description: (
+          <>
+            Bootcamp full-stack web developer: React/Next.js, Node.js
+            (Express/Nest), Prisma/ORM, PostgreSQL/MySQL, REST API,Basic
+            Authenticate JWT,Git/Github.
+          </>
+        ),
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Eduwork",
+        description: (
+          <>
+            Mini bootcamp: Basic PHP, JavaScript, React, Node.js, Basic
+            database, Git/GitHub.
+          </>
+        ),
       },
     ],
   },
@@ -169,36 +222,12 @@ const about: About = {
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
+        title: "Frontend Development",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
-        ),
-        tags: [
-          {
-            name: "Figma",
-            icon: "figma",
-          },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+          <>
+            Building modern apps with Next.js (App Router, RSC, Server Actions)
+            and React.
+          </>
         ),
         tags: [
           {
@@ -206,24 +235,84 @@ const about: About = {
             icon: "javascript",
           },
           {
+            name: "TypeScript",
+            icon: "typescript",
+          },
+          {
             name: "Next.js",
             icon: "nextjs",
           },
           {
-            name: "Supabase",
-            icon: "supabase",
+            name: "React",
+            icon: "react",
           },
-        ],
-        // optional: leave the array empty if you don't want to display images
-        images: [
           {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            name: "Tailwind CSS",
+            icon: "tailwind",
+          },
+          {
+            name: "Bootstrap",
+            icon: "bootstrap",
+          },
+          {
+            name: "Zod",
+            icon: "zod",
+          },
+          {
+            name: "TanStack",
+            icon: "reactquery",
+          },
+          {
+            name: "Redux",
+            icon: "redux",
           },
         ],
-      },  
+        images: [],
+      },
+      {
+        title: "Backend Development",
+        description: (
+          <>
+            Designing and operating secure, scalable APIs and background workers
+            and production ops with Docker & Nginx.
+          </>
+        ),
+        tags: [
+          { name: "Node.js", icon: "nodejs" },
+          { name: "TypeScript", icon: "typescript" },
+          { name: "NestJS", icon: "nestjs" },
+          { name: "Fastify", icon: "fastify" },
+          { name: "Prisma", icon: "prisma" },
+          { name: "PostgreSQL", icon: "postgresql" },
+          { name: "MySQL", icon: "mysql" },
+          { name: "Redis", icon: "redis" },
+          { name: "JWT", icon: "jwt" },
+          { name: "Docker", icon: "docker" },
+          { name: "Nginx", icon: "nginx" },
+          { name: "Bun", icon: "bun" },
+          { name: "Go", icon: "golang" },
+          { name: "Supabase", icon: "supabase" },
+          { name: "Socket.io", icon: "socket" },
+        ],
+        images: [],
+      },
+      {
+        title: "Web Scraping & Automation",
+        description: (
+          <>
+            High-reliability crawlers and browser automations, structured
+            outputs, and fault-tolerant pipelines.
+          </>
+        ),
+        tags: [
+          { name: "Puppeteer", icon: "puppeteer" },
+          { name: "Cheerio", icon: "cheerio" },
+          { name: "Axios/HTTP", icon: "axios" },
+          { name: "Node-cron (Scheduling)", icon: "cron" },
+          { name: "CSV/JSON/Parquet", icon: "json" },
+        ],
+        images: [],
+      },
     ],
   },
 };

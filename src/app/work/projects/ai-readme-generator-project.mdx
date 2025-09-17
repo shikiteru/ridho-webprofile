@@ -1,0 +1,71 @@
+---
+title: "AI README Generator — Generate clean READMEs from any GitHub repo"
+publishedAt: "2025-09-17"
+summary: "A Next.js app that analyzes a public repository URL and drafts a polished, structured README with badges, features, tech stack, and installation steps."
+images:
+  - "/images/projects/project-ridho/ai-readme.png"
+team:
+  - name: "Ridho"
+    role: "Full-Stack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/ridho-80271b21b/"
+
+link: "https://ai-readme-generator-xi.vercel.app/"
+---
+
+## Overview
+
+**AI README Generator** helps developers produce a tidy, skimmable README by pasting a **public GitHub repository URL**. The app inspects key files (e.g., `package.json`, config files, existing `README` if present), extracts signals about features and stack, then composes a structured markdown draft you can edit and download.
+
+## How It Works
+
+1. **Input URL** – Validate format and public visibility.  
+2. **Analyze** – Fetch metadata, important files/folders, dependencies, and scripts.  
+3. **Draft** – An AI prompt assembles sections: title, description, features, tech stack, install/run, env, contribution, and license.  
+4. **Preview** – Review the markdown, tweak copy, then **Download** as `README.md`
+
+## Key Features
+
+- **One-click analysis** of any public repo.
+- **Standardized README layout** (badges, summary, features, stack, installation, usage, env, architecture, contributing, license).
+- **Tech Stack detection** from dependencies, config, and folder conventions.
+- **Layout presets** (Minimal / Docs-style / OSS) for consistent headings and order.
+- **Live preview** before export.
+- **Export to file** or **copy to clipboard**.
+- **URL validation & basic rate limiting**.
+- **Accessible dark UI** with clean typography.
+
+## Technologies Used
+
+- **Next.js (App Router, RSC, Server Actions)** — server-side fetching & generation.  
+- **TypeScript** — end-to-end type safety.  
+- **Tailwind CSS + shadcn/ui** — consistent, composable UI.  
+- **Zod** — input validation and schema guards.  
+- **GitHub REST/fetch** — metadata + important file retrieval (public repos).  
+- **AI provider** — summarization and structured draft generation.
+
+## Architecture
+
+- **/app** — routes for input, analysis, preview, and download.  
+- **Server Actions**  
+  - `analyzeRepo(url)` → fetch + parse metadata, normalize signals  
+  - `draftReadme(data, preset)` → produce markdown draft  
+- **Guards** — URL sanitization, GitHub domain checks, minimal rate limiting.  
+- **Client state** — kept lean; heavy work happens on the server for stability.
+
+## Challenges and Learnings
+
+- **Cross-project consistency**: Different repo shapes required a **section schema** and **fallback rules** when signals are sparse.  
+- **Signal noise in large repos**: Implemented **file importance scoring** (prioritize `package.json`, lockfiles, `src/`, `apps/`, `packages/`, existing README).  
+
+## Outcome
+
+- Drafting a solid README now takes **seconds**, cutting initial documentation time by ~70–90%.  
+- The consistent structure improves collaboration and onboarding for contributors.  
+- Used across multiple personal and side projects before publishing to GitHub/LinkedIn.
+
+## Next Steps
+
+- **Popular templates** (CLI tool, library, monorepo, React Native app).  
+- **Auto badges** (CI status, coverage, version).  
+- **Optional LICENSE & CODE_OF_CONDUCT** scaffolding.  

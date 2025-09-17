@@ -1,0 +1,72 @@
+---
+title: "MyCash — Simple finance tracking connected to Google Sheets"
+publishedAt: "2025-09-17"
+summary: "A lightweight, privacy-friendly PWA for personal and small-business finance tracking. Connect your own Google Spreadsheet, use an access-key to sign in, and get clean monthly reports—online or offline."
+images:
+  - "/images/projects/project-ridho/mycash-app.png"
+team:
+  - name: "Ridho"
+    role: "Full-Stack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/ridho-80271b21b/"
+link: "https://appmycash.site/"
+---
+
+## Overview
+
+**MyCash** helps you record daily transactions in seconds and keep everything synced to **your** Google Spreadsheet. No complex setup—paste a sheet URL, enter your **access key**, and start tracking. As a **PWA**, MyCash works great on mobile and desktop, supports offline usage, and generates tidy monthly summaries and charts.
+
+## How It Works
+
+1. **Connect Spreadsheet** — Paste a valid Google Sheets URL (you own the file).  
+2. **Access Key Auth** — Enter your personal access key to open the dashboard.  
+3. **Record Transactions** — Add income/expenses with category, amount, notes.  
+4. **Monthly View** — See totals, charts, and filters (by date, category, method).  
+
+## Key Features
+
+- **Google Sheets sync (read/write)** — your data remains in your own spreadsheet.
+- **Access-key authentication** — simple, cookie-based session; no emails/passwords.
+- **PWA** — installable, responsive UI, and **offline** capture with sync on reconnect.
+- **Fast entry** — minimal form; typical transaction < 10 seconds.
+- **Monthly reports** — income vs expense, category breakdowns, and trends.
+- **Filters** — by date range, category, type, and payment method.
+
+## Technologies Used
+
+- **Next.js (App Router, RSC, Server Actions)** — secure server-side reads/writes to Sheets.  
+- **TypeScript** — end-to-end types for reliability.  
+- **Tailwind CSS + shadcn/ui** — clean, accessible components.  
+- **next-pwa / Service Worker** — installable app, offline cache, fast startup.  
+- **Zod** — validation for inputs (URL, transaction payloads).  
+- **Google Sheets API** — structured read/write to specific ranges/tabs.
+
+## Architecture
+
+- **/app**  
+  - `/` — connect screen (Sheet URL + Access Key).  
+  - `/dashboard` — transactions table, quick-add form, charts & filters.
+- **Server Actions**  
+  - `connectSheet(url, key)` — validate URL, set session cookie.  
+  - `createTransaction(payload)` — append to sheet with server-side validation.  
+  - `listTransactions({ month })` — read and normalize rows for UI & charts.  
+- **Guards & Middleware** — access-key session check, basic rate limiting.  
+- **Data Model (Sheet columns)** — `Date, Description, Category, Type, Amount, Method, Notes`.  
+- **PWA** — precache shell, background sync for queued writes when offline.
+
+## Challenges and Learnings
+
+- **Keeping Sheets fast & consistent** — implemented batched writes and strict schemas to avoid broken formulas and mixed types.  
+- **Auth without accounts** — access-key sessions proved effective for solo users and small teams while keeping friction low.  
+
+## Outcome
+
+- Users can onboard in **under 1 minute** and record transactions in **< 10 seconds**.  
+- Monthly overviews reduce manual spreadsheet work and make reviews effortless.  
+
+## Next Steps
+
+- **Recurring transactions & rules** (auto-categorize).  
+- **Receipt capture (camera/OCR)** with attachment link to each row.  
+- **Budget goals & alerts** per category.  
+- **Team access** with role-based keys (read-only vs editor).
