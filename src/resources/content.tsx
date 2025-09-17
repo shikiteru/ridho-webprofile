@@ -107,14 +107,14 @@ const about: About = {
     title: "Introduction",
     description: (
       <>
-        I am a FullStack Developer with over 3 years of experience in the
-        industry.I have experience building robust and scalable server-side
-        applications using both Node.js and Golang, and I have a solid
-        understanding of RESTful APIs (JSON) and effective database design. I am
-        highly committed to continuous learning and growth in the field of web
-        development, always striving to stay up to date with industry trends and
-        best practices to deliver efficient, maintainable, and high performance
-        applications.
+        I’m a Full-Stack Developer with 3+ years of experience building
+        production-ready web applications. I specialize in robust, scalable
+        server-side systems using Node.js and Golang, along with well-structured
+        RESTful APIs and thoughtful database design. I care about code quality,
+        clarity, and performance, and I deliver services that are easy to
+        maintain and extend. I’m committed to continuous learning and keep up
+        with industry trends and best practices to ship high-performance,
+        reliable software.
       </>
     ),
   },
